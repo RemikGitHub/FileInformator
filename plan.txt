@@ -1,0 +1,6 @@
+JACKSON
+    ObjectMapper objectMapper = new ObjectMapper();
+    Car car = new Car("yellow", "renault");
+    objectMapper.writeValue(new File("target/car.json"), car);
+	
+	
