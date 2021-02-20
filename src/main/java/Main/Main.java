@@ -1,8 +1,8 @@
 package Main;
 
 import Directory.Directory;
+import Json.Json;
 
-import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -18,6 +18,9 @@ public class Main {
         System.out.println("Write the directory to which you want to save the information.");
         fileTo = scanner.nextLine();
 
+        Directory directory = new Directory(fileFrom);
+
+        Json.fileMetadataToJson(fileTo, directory.getFilesMetadataFromDirectory());
 
     }
 }
