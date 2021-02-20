@@ -17,7 +17,7 @@ public class Main {
         setFileTo();
 
         Directory directory = new Directory(fileFrom);
-        Json.fileMetadataToJson(fileTo, directory.getFilesMetadataFromDirectory());
+        Json.fileMetadataToJson(fileTo, directory.getFilesMetadataListFromDirectory());
     }
 
     private static void setFileFrom() {
@@ -40,7 +40,7 @@ public class Main {
 
         while ( !Files.isDirectory(Paths.get(fileTo)) ){
             System.out.println("Write right directory!");
-            fileFrom = scanner.nextLine();
+            fileTo = scanner.nextLine();
         }
     }
 }

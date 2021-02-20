@@ -29,7 +29,7 @@ public class Directory {
         return f.list();
     }
 
-    public List<FileMetadata> getFilesMetadataFromDirectory(){
+    public List<FileMetadata> getFilesMetadataListFromDirectory(){
         String[] filesNames = getFilesFromDirectory();
         List<FileMetadata> filesMetadata = new ArrayList<>();
 
