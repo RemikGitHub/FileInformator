@@ -20,7 +20,7 @@ public class FileMetadata {
         File file = new File(path);
 
         this.fileName = file.getName();
-        this.fileSize = (double) file.length() / (1024 * 1024) + " MB";
+        this.fileSize = String.format( "%.2f kB",(double) file.length() / 1024 );
 
         this.fileCreationDataTime = setCreationDateTime(path);
     }
@@ -31,8 +31,8 @@ public class FileMetadata {
             attr = Files.readAttributes(Path.of(path), BasicFileAttributes.class);
         } catch (IOException e) {
             System.out.println("Input error");
-            attr = null;
             e.printStackTrace();
+            return "null";
         }
 
         LocalDateTime localDateTime = attr.creationTime()
