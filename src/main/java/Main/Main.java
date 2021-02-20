@@ -1,5 +1,8 @@
 package Main;
 
+import Directory.Directory;
+
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +17,7 @@ public class Main {
 
         System.out.println("Write the directory to which you want to save the information.");
         fileTo = scanner.nextLine();
+
 
     }
 }
