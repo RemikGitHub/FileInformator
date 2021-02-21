@@ -1,5 +1,7 @@
 package File;
 
+import Converter.ItUnitsConverter;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,8 +22,7 @@ public class FileMetadata {
         File file = new File(path);
 
         this.fileName = file.getName();
-        this.fileSize = String.format( "%.2f kB",(double) file.length() / 1024 );
-
+        this.fileSize = ItUnitsConverter.dynamicSizeConverter( (double)file.length() );
         this.fileCreationDataTime = setCreationDateTime(path);
     }
 
